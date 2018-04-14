@@ -12,6 +12,7 @@ import GoogleMobileAds
 class HomeVC: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var removeAdsBtn: UIButton!
+    @IBOutlet weak var adsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,13 @@ class HomeVC: UIViewController {
 
     func setupAds() {
         if UserDefaults.standard.bool(forKey: PurchaseManager.instance.IAP_REMOVE_ADS) {
-            if removeAdsBtn != nil {
-                removeAdsBtn.removeFromSuperview()
-            }
-            if bannerView != nil {
-                bannerView.removeFromSuperview()
-            }
+            adsView.removeFromSuperview()
+//            if removeAdsBtn != nil {
+//                removeAdsBtn.removeFromSuperview()
+//            }
+//            if bannerView != nil {
+//                bannerView.removeFromSuperview()
+//            }
         } else {
             bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
             bannerView.rootViewController = self
@@ -53,8 +55,7 @@ class HomeVC: UIViewController {
         PurchaseManager.instance.purchaseRemoveAds { (success) in
             // dismiss spinner
             if success {
-                self.bannerView.removeFromSuperview()
-                self.removeAdsBtn.removeFromSuperview()
+                self.adsView.removeFromSuperview()
             } else {
                 // show error message to user
             }
