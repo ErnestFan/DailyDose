@@ -11,3 +11,7 @@ An app for in-app purchase and Google AdMob.
 </ul>
 
 ### Screenshots
+
+<img src="https://github.com/ErnestFan/DailyDose/blob/master/Screenshots/1.PNG?raw=true" width="200">
+<img src="https://github.com/ErnestFan/DailyDose/blob/master/Screenshots/2.PNG?raw=true" width="200">
+<img src="https://github.com/ErnestFan/DailyDose/blob/master/Screenshots/3.PNG?raw=true" width="200">
